@@ -1,0 +1,79 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    cursor: url(./img/cursor.png), default;
+    background-color: #c0c86d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh; /* makes the game somewhat centered on the page and taking the whole viewport height */
+}
+
+.background {
+    background: url(./img/background.png);
+    /* stops background from repeating its image */
+    background-repeat: no-repeat;
+    /* only desktop version :). For the sake of ease, sorry. */
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hole {
+    background-color: black;
+    border-radius: 50%; /* makes the sphere  */
+
+    overflow: visible; /*if something goes larger than the element that it is in, 
+    just let it don't let people scrool but still show whatever is overflowing
+    if overflow were visible, moles images would get cut beceause hole is smaller in width than them */
+
+    width: 267px;
+    height: 267px;
+}
+
+.hole-container {
+    /* makes 4 holes in each line and centered on the page and in contrast to other holes */
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mole {
+    /* says to mole images: stay where you are but move 30px to the right. Centeres them on the hole */
+    position: relative;
+    right: 30px;
+}
+
+.hungry {
+    cursor: url(./img/cursor-worm.png), default; /* when hungry class display bird with worm over mole */
+}
+
+.gone {
+    display: none; /* makes mole dissapear when this class assigned */
+}
+
+.hide {
+    display: none;
+}
+
+.worm {
+    width: 1660px;
+}
+
+.worm-container {
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+}
+.worm-box {
+    width: 1660px;
+}
